@@ -1,9 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const log = () => {
+
+}
+</script>
 
 <template>
-  <div></div>
-</template>
+  <div>
 
+  </div>
+</template>
+ 
 <style lang="scss">
 html,
 #app {
