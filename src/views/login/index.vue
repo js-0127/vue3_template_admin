@@ -12,13 +12,13 @@ import { FormInstance } from 'element-plus/lib/components/form/index.js'
 const router = useRouter()
 const route = useRoute()
 const redirect = route.query.redirect
-//获取时间 
+//获取时间
 const message = dateTime()
 const userStore = useUserStore()
 //创建表单
 const loginForm = reactive<loginFormData>({
   username: '',
-  password: ''
+  password: '',
 })
 //设置按钮状态
 const loading = ref(false)
@@ -28,24 +28,22 @@ const handleLogin = async (data: loginFormData) => {
   try {
     const res = await userStore.setToken(data)
     if (res)
-
       //@ts-ignore
       ElNotification({
         type: 'success',
         title: message,
-        message: '欢迎回来'
+        message: '欢迎回来',
       })
     //@ts-ignore
     router.push({ path: redirect || '/' })
-  }
-  catch (err) {
+  } catch (err) {
     setTimeout(() => {
       loading.value = false
-    }, 500);
+    }, 500)
     //@ts-ignore
     ElNotification({
       type: 'error',
-      message: (err as Error).message
+      message: (err as Error).message,
     })
   }
 }
@@ -59,8 +57,7 @@ const rules = reactive<FormRules<loginFormData>>({
   password: [
     { required: true, message: '请输入密码', trigger: 'blur' },
     { min: 6, max: 16, message: '密码长度在6-16位', trigger: 'change' },
-
-  ]
+  ],
 })
 </script>
 
@@ -69,18 +66,39 @@ const rules = reactive<FormRules<loginFormData>>({
     <el-row>
       <el-col :span="12" xs="0"></el-col>
       <el-col :span="12" xs="24">
-        <el-form ref="ruleFormRef" :rules="rules" class="login_form" :model="loginForm">
+        <el-form
+          ref="ruleFormRef"
+          :rules="rules"
+          class="login_form"
+          :model="loginForm"
+        >
           <h1>Hello</h1>
           <h2>欢迎来到小熊甄选</h2>
           <el-form-item prop="username">
-            <el-input :prefix-icon="User" v-model="loginForm.username">用户名</el-input>
+            <el-input :prefix-icon="User" v-model="loginForm.username">
+              用户名
+            </el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input :prefix-icon="Lock" type="password" v-model="loginForm.password" show-password>密码</el-input>
+            <el-input
+              :prefix-icon="Lock"
+              type="password"
+              v-model="loginForm.password"
+              show-password
+            >
+              密码
+            </el-input>
           </el-form-item>
           <el-form-item>
-            <el-button :loading="loading" style="width: 100%;" type="primary" default
-              @click="handleLogin(loginForm)">登录</el-button>
+            <el-button
+              :loading="loading"
+              style="width: 100%"
+              type="primary"
+              default
+              @click="handleLogin(loginForm)"
+            >
+              登录
+            </el-button>
           </el-form-item>
         </el-form>
       </el-col>
@@ -105,13 +123,13 @@ const rules = reactive<FormRules<loginFormData>>({
 
     h1 {
       font-size: 40px;
-      color: white
+      color: white;
     }
 
     h2 {
       margin: 20px 0;
       font-size: 20px;
-      color: white
+      color: white;
     }
   }
 }

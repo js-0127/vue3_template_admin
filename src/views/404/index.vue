@@ -1,34 +1,34 @@
 <template>
-    <div class="error_box">
-        <img src="../../assets/images/error_images/404.png" alt="">
-        <button @click="goHome">首页</button>
-    </div>
+  <div class="error_box">
+    <img src="../../assets/images/error_images/404.png" alt="" />
+    <button @click="goHome">首页</button>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-let $router = useRouter();
+import { useRouter } from 'vue-router'
+let $router = useRouter()
 const goHome = () => {
-    $router.push('/home')
+  $router.push('/home')
 }
 </script>
 
 <style scoped lang="scss">
 .error_box {
-    width: 100vw;
-    height: 100vh;
-    background: yellowgreen;
-    display: flex;
-    justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: yellowgreen;
+  display: flex;
+  justify-content: center;
 
-    img {
-        width: 800px;
-        height: 400px;
-    }
+  img {
+    width: 800px;
+    height: 400px;
+  }
 
-    button {
-        width: 50px;
-        height: 50px;
-    }
+  button {
+    width: 50px;
+    height: 50px;
+  }
 }
 </style>

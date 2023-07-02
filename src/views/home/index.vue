@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useUserStore } from '@/store';
+import { useUserStore } from '@/store'
 import { dateTime } from '@/utils/date'
 const userStore = useUserStore()
 </script>
@@ -8,7 +8,7 @@ const userStore = useUserStore()
   <div>
     <el-card>
       <div class="container">
-        <img :src="userStore.avtar" alt="" class="avatar">
+        <img :src="userStore.avtar" alt="" class="avatar" />
         <div class="bottom">
           <h3 class="title">{{ dateTime() }}呀{{ userStore.username }}</h3>
           <p class="subtitle">小熊甄选运营平台</p>

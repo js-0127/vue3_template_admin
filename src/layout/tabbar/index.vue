@@ -4,19 +4,17 @@ import Setting from './setting/index.vue'
 </script>
 
 <template>
-    <div class="tabbar-page">
-        <Bread></Bread>
-        <Setting></Setting>
-    </div>
+  <div class="tabbar-page">
+    <Bread></Bread>
+    <Setting></Setting>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .tabbar-page {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-
-
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 </style>
